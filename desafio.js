@@ -9,6 +9,7 @@ Exemplos
   132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
   493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 */
+const numeroTest = 493193;
 
 const raizDigital = (number) => {
   let arrayNumber = number.toString().match(/[0-9]/g);
@@ -24,12 +25,12 @@ const raizDigital = (number) => {
   }
 };
 
-// const resolve = raizDigital(493193);
+// const resolve = raizDigital(numeroTest);
 // console.log(resolve);
 
-const rdCacalc = (number) =>
+const rdCalc = (number) =>
   number > 9
-    ? rdCacalc(
+    ? rdCalc(
         number
           .toString()
           .match(/[0-9]/g)
@@ -37,5 +38,10 @@ const rdCacalc = (number) =>
       )
     : number;
 
-const rd = rdCacalc(132189);
+const rd = rdCalc(numeroTest);
 console.log(rd);
+
+const rdMatemagico = (n) => ((n - 1) % 9) + 1;
+
+const rdMM = rdMatemagico(numeroTest);
+console.log(rdMM);
