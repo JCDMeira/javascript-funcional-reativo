@@ -20,3 +20,14 @@ const getNome = (item) => item.nome;
 const itensValidos = carrinho.filter(qatMaiorQueZero);
 const nomesItensValidos = carrinho.filter(qatMaiorQueZero).map(getNome);
 console.log(itensValidos);
+
+Array.prototype.myFilter = function (fn) {
+  const filtered = [];
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i], i, this, this)) filtered.push(this[i]);
+  }
+  return filtered;
+};
+
+const myItensValidos = carrinho.myFilter(qatMaiorQueZero);
+console.log("myFilter", myItensValidos);
