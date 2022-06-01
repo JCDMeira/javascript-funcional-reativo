@@ -36,16 +36,28 @@ p.then(primeiroValor)
 //   }, 2000);
 // }, 2000);
 
-function esperaPor(tempo = 2000) {
-  return new Promise(function (resolve) {
-    setTimeout(function () {
-      console.log("Exec promise", tempo);
-      resolve(tempo);
-    }, tempo);
+// function esperaPor(tempo = 2000) {
+//   return new Promise(function (resolve) {
+//     setTimeout(function () {
+//       console.log("Exec promise", tempo);
+//       resolve(tempo);
+//     }, tempo);
+//   });
+// }
+
+// const minhaPromessa = esperaPor(3000).then(console.log);
+// console.log(minhaPromessa);
+
+// esperaPor().then(esperaPor).then(esperaPor);
+
+function gerarNumeroEntre(min, max) {
+  if (min > max) [max, min] = [min, max];
+
+  return new Promise((resolve) => {
+    const fator = max - min + 1;
+    const aleatorio = parseInt(Math.random() * fator) + min;
+    resolve(aleatorio);
   });
 }
 
-const minhaPromessa = esperaPor(3000).then(console.log);
-console.log(minhaPromessa);
-
-esperaPor().then(esperaPor).then(esperaPor);
+gerarNumeroEntre(10, 30).then(console.log);
