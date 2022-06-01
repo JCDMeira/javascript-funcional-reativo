@@ -22,3 +22,30 @@ p.then(primeiroValor)
   .then((primeiro) => primeiro[0])
   .then((letra) => letra.toLowerCase())
   .then(console.log);
+
+//* exemplo com callbacks
+// setTimeout(function () {
+//   console.log("Exec callback");
+
+//   setTimeout(function () {
+//     console.log("Exec callback 2");
+
+//     setTimeout(function () {
+//       console.log("Exec callback 3");
+//     }, 2000);
+//   }, 2000);
+// }, 2000);
+
+function esperaPor(tempo = 2000) {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      console.log("Exec promise", tempo);
+      resolve(tempo);
+    }, tempo);
+  });
+}
+
+const minhaPromessa = esperaPor(3000).then(console.log);
+console.log(minhaPromessa);
+
+esperaPor().then(esperaPor).then(esperaPor);
