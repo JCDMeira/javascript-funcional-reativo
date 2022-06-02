@@ -36,6 +36,8 @@ p.then(primeiroValor)
 //   }, 2000);
 // }, 2000);
 
+//----
+
 // function esperaPor(tempo = 2000) {
 //   return new Promise(function (resolve) {
 //     setTimeout(function () {
