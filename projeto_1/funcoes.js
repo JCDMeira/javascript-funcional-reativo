@@ -40,10 +40,18 @@ function removerSeIncluir(array, padraoTextual) {
   return array.filter((el) => !el.includes(padraoTextual));
 }
 
+function removerSeApenasNumero(array) {
+  return array.filter((el) => {
+    const num = parseInt(el.trim());
+    return num !== num;
+  });
+}
+
 module.exports = {
   lerDiretorio,
   elementosTerminadosCom,
   lerArquivos,
   removerSeVazio,
   removerSeIncluir,
+  removerSeApenasNumero,
 };
