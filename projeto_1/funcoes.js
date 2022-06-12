@@ -63,6 +63,9 @@ function removerSimbolos(simbolos) {
   };
 }
 
+const mesclarElementosCom = (simbolo) => (array) => array.join(simbolo);
+const SepararElementosPor = (simbolo) => (array) => array.split(simbolo);
+
 module.exports = {
   lerDiretorio,
   elementosTerminadosCom,
@@ -71,4 +74,6 @@ module.exports = {
   removerElementosSeIncluir,
   removerElementosSeApenasNumero,
   removerSimbolos,
+  mesclarElementosCom,
+  SepararElementosPor,
 };
