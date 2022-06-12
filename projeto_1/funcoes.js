@@ -66,6 +66,18 @@ function removerSimbolos(simbolos) {
 const mesclarElementosCom = (simbolo) => (array) => array.join(simbolo);
 const SepararElementosPor = (simbolo) => (array) => array.split(simbolo);
 
+function agruparElementos(elementos) {
+  return Object.values(
+    elementos.reduce((agrupamento, palavra) => {
+      const el = palavra.toLowerCase();
+      const qtde = agrupamento[el] ? agrupamento[el].qtde + 1 : 1;
+
+      agrupamento[el] = { elemento: el, qtde };
+      return agrupamento;
+    }, {})
+  );
+}
+
 module.exports = {
   lerDiretorio,
   elementosTerminadosCom,
@@ -76,4 +88,5 @@ module.exports = {
   removerSimbolos,
   mesclarElementosCom,
   SepararElementosPor,
+  agruparElementos,
 };
