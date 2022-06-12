@@ -20,6 +20,18 @@ const simbolos = [
   ")",
 ];
 
+function agruparPalavras(palavras) {
+  return palavras.reduce((agrupamento, palavra) => {
+    const p = palavra.toLowerCase();
+    if (agrupamento[p]) {
+      agrupamento[p] += 1;
+    } else {
+      agrupamento[p] = 1;
+    }
+    return agrupamento;
+  }, {});
+}
+
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom(".srt"))
   .then(fn.lerArquivos)
@@ -32,4 +44,6 @@ fn.lerDiretorio(caminho)
   .then(fn.mesclarElementosCom(" "))
   .then(fn.SepararElementosPor(" "))
   .then(fn.removerElementosSeVazio)
+  .then(fn.removerElementosSeApenasNumero)
+  .then(agruparPalavras)
   .then(console.log);
