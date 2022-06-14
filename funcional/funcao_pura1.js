@@ -6,12 +6,12 @@ const PI = 3.14;
 
 //_ É impura por depender de um fator externo
 function areaCirc(raio) {
-  return raio * raio * PI; // é uma dependência estável até
+  return raio * raio * PI; //_ é uma dependência estável até
 }
 console.log(areaCirc(10));
 
 function areaCircPura(raio, PI) {
-  return raio * raio * PI; // é uma dependência estável até
+  return raio * raio * PI; //_ é uma dependência estável até
 }
 console.log(areaCircPura(10, PI));
 console.log(areaCircPura(10, 3.141592));
@@ -30,3 +30,19 @@ console.log(gerarNumeroAleatorio(1, 10000));
 console.log(gerarNumeroAleatorio(1, 10000));
 console.log(gerarNumeroAleatorio(1, 10000));
 console.log(gerarNumeroAleatorio(1, 10000));
+
+console.log("-----------------------");
+let qtdeDeExecucoe = 0;
+//_ pura!
+function somar(a, b) {
+  qtdeDeExecucoe++; //! efeito colateral observável
+  return a + b;
+}
+
+console.log(qtdeDeExecucoe);
+console.log(somar(68, 31));
+console.log(somar(68, 31));
+console.log(somar(68, 31));
+console.log(somar(68, 31));
+console.log(somar(68, 31));
+console.log(qtdeDeExecucoe);
