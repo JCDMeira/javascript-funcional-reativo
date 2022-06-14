@@ -16,3 +16,17 @@ function areaCircPura(raio, PI) {
 console.log(areaCircPura(10, PI));
 console.log(areaCircPura(10, 3.141592));
 console.log(areaCircPura(10, Math.PI));
+
+console.log("-----------------------");
+//_ funcão impura -> a entrada igual não determina a saída
+//_ se mexer com dados aleatórios não da pra ter funções puras
+function gerarNumeroAleatorio(min, max) {
+  const fator = max - min + 1;
+  return parseInt(Math.random() * fator) + min;
+}
+
+console.log(gerarNumeroAleatorio(1, 10000));
+console.log(gerarNumeroAleatorio(1, 10000));
+console.log(gerarNumeroAleatorio(1, 10000));
+console.log(gerarNumeroAleatorio(1, 10000));
+console.log(gerarNumeroAleatorio(1, 10000));
