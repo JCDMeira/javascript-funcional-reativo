@@ -29,3 +29,38 @@ function somarArray(array, total = 0) {
 }
 const total = somarArray(nums2);
 console.log(total);
+
+console.log("-------------------");
+
+const pessoa = Object.freeze({
+  nome: "Maria",
+  altura: 1.76,
+  cidade: "São Paulo",
+  end: Object.freeze({
+    rua: "Feliz!",
+  }),
+});
+
+//_ Atribuição por Referência
+const outraPessoa = pessoa;
+
+//_ Passagem por Referência (Função impura!)
+function alteraPessoa(pessoa) {
+  const novaPessoa = { ...pessoa };
+  novaPessoa.nome = "João";
+  novaPessoa.cidade = "Fortaleza";
+  novaPessoa.end.rua = "ABC";
+  return novaPessoa;
+}
+
+const novaPessoa = alteraPessoa(pessoa);
+console.log(pessoa);
+console.log(novaPessoa);
+
+let a = 3;
+let b = a; //_ atribuição por valor (copia!)
+
+a++;
+b--;
+
+console.log(a, b);
