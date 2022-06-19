@@ -1,0 +1,20 @@
+{
+  "name": "javascript-funcional-reativo",
+  "version": "1.0.0",
+  "description": "<img   style=\"width: 100%\"   src=\"https://img-c.udemycdn.com/course/480x270/3205160_f038_7.jpg\"   alt=\"imagem logo javaScript e elementos que remetem a programação funcional\" />",
+  "main": "desafio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCDMeira/javascript-funcional-reativo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JCDMeira/javascript-funcional-reativo/issues"
+  },
+  "homepage": "https://github.com/JCDMeira/javascript-funcional-reativo#readme"
+}
