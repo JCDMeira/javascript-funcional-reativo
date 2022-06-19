@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JCDMeira/javascript-funcional-reativo/issues"
   },
-  "homepage": "https://github.com/JCDMeira/javascript-funcional-reativo#readme"
+  "homepage": "https://github.com/JCDMeira/javascript-funcional-reativo#readme",
+  "dependencies": {
+    "rxjs": "^7.5.5"
+  }
 }
