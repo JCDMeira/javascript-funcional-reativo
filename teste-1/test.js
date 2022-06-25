@@ -28,7 +28,7 @@
 
 //----------------------------------------------------------------
 
-const exampleTag = { key: "uma_tag", tag: "Um valor" };
+const objWithTag = { key: "uma_tag", tag: "Um valor" };
 
 const lerObj = (obj) => new Promise((resolve) => resolve(obj));
 
@@ -38,9 +38,7 @@ const getArrayOfValues = (obj) =>
 const getFirstElementAsString = (array) =>
   new Promise((resolve) => resolve(array.slice(0, 1).toString()));
 
-const tag = lerObj(exampleTag)
+lerObj(objWithTag)
   .then(getArrayOfValues)
   .then(getFirstElementAsString)
   .then(console.log);
-
-console.log(tag);
