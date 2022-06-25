@@ -1,9 +1,46 @@
+// const exampleTag = { key: "uma_tag", tag: "Um valor" };
+
+// const getArrayOfValues = (obj) => Object.keys(obj).map((key) => obj[key]);
+
+// const getFirstElementAsString = (array) => array.slice(0, 1).toString();
+
+// const tag = getFirstElementAsString(getArrayOfValues(exampleTag));
+
+// console.log(tag);
+
+//----------------------------------------------------------------
+// const objTag = {
+//   tags: { key: "uma_tag", tag: "Um valor" },
+
+//   getArrayOfValues: function () {
+//     this.tags = Object.keys(this.tags).map((key) => this.tags[key]);
+//     return this;
+//   },
+
+//   getFirstElementAsString: function () {
+//     this.tags = this.tags.slice(0, 1).toString();
+//     return this;
+//   },
+// };
+
+// const a = objTag.getArrayOfValues().getFirstElementAsString();
+// console.log(a.tags);
+
+//----------------------------------------------------------------
+
 const exampleTag = { key: "uma_tag", tag: "Um valor" };
 
-const getArrayOfValues = (obj) => Object.keys(obj).map((key) => obj[key]);
+const lerObj = (obj) => new Promise((resolve) => resolve(obj));
 
-const getFirstElementAsString = (array) => array.slice(0, 1).toString();
+const getArrayOfValues = (obj) =>
+  new Promise((resolve) => resolve(Object.keys(obj).map((key) => obj[key])));
 
-const tag = getFirstElementAsString(getArrayOfValues(exampleTag));
+const getFirstElementAsString = (array) =>
+  new Promise((resolve) => resolve(array.slice(0, 1).toString()));
+
+const tag = lerObj(exampleTag)
+  .then(getArrayOfValues)
+  .then(getFirstElementAsString)
+  .then(console.log);
 
 console.log(tag);
